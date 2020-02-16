@@ -1,0 +1,23 @@
+LightGBM
+params = {'boosting_type': ['gbdt'], 'objective': 'regression','metric': 'rmse','n_estimators' : 500000,
+        'random_state':[0],'num_leaves':[110], 'max_depth':[13],'min_data_in_leaf': [4],'colsample_bytree': [1],
+        'learning_rate': [0.01],'subsample': [0.1],'max_bin':[165],'reg_alpha': [0.2],'reg_lambda': [0.1],
+        'feature_fraction': [1],'lambda_l1': [0.2],'lambda_l2': [0.1],'min_gain_to_split':[0]
+    }
+#         'objective': 'multiclass',
+#         'num_class': 3,
+
+XGBoost
+params = {'objective':'reg:linear','eval_metric':'mae','nrounds':500000,'booster':'gbtree',
+          'learning_rate': 0.1,'gamma':0,'max_depth': 10,'min_child_weight':1,'max_delta_step':0,
+          'subsample':1,'colsample_bytree':1,'colsample_bylevel':1,'lambda':1,'alpha':0,'ramdom_state':0,
+         }
+
+#'objective': 'binary:logistic',multi:softmax & num_class =
+
+CatBoost
+params = {'eval_metric':'RMSE','num_boost_round':1000,'early_stopping_rounds':50,
+          'learning_rate':0.03,'depth':6,'random_state':0,'random_strength':1,
+          'bagging_temperature':1,'has_time':False,
+#           'l2_leaf_reg':5,
+         }
